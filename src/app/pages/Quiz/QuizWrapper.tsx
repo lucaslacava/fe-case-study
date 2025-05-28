@@ -9,10 +9,10 @@ interface QuizWrapperProps extends PropsWithChildren {
 export const QuizWrapper = ({ isLoading, children }: QuizWrapperProps) => {
   const { resetQuiz } = useQuiz();
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
+    <div className="fixed inset-0 z-50">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
       <div
-        className={`relative h-screen w-full flex flex-col transition-all duration-500 ${
+        className={`relative h-full w-full flex flex-col transition-all duration-500 ${
           isLoading ? "bg-transparent" : "bg-white"
         }`}
       >
@@ -20,7 +20,7 @@ export const QuizWrapper = ({ isLoading, children }: QuizWrapperProps) => {
         {isLoading ? (
           <LoadingPage />
         ) : (
-          <div className="flex-1 overflow-hidden">{children}</div>
+          <div className="flex-1 overflow-y-auto h-full">{children}</div>
         )}
       </div>
     </div>
