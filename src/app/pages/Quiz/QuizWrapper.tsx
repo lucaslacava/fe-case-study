@@ -7,16 +7,21 @@ interface QuizWrapperProps extends PropsWithChildren {
   isLoading: boolean;
 }
 export const QuizWrapper = ({ isLoading, children }: QuizWrapperProps) => {
-  const { setShowQuiz } = useQuiz();
+  const { resetQuiz } = useQuiz();
   return (
-    <div className="fixed inset-0 backdrop-blur-sm animate-in fade-in duration-500">
+    <div className="fixed inset-0 z-50 overflow-hidden">
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
       <div
-        className={`min-h-screen w-full flex flex-col relative transition-all duration-500 ${
+        className={`relative h-screen w-full flex flex-col transition-all duration-500 ${
           isLoading ? "bg-transparent" : "bg-white"
         }`}
       >
-        <CloseButton handleClose={() => setShowQuiz(false)} />
-        {isLoading ? <LoadingPage /> : children}
+        <CloseButton handleClose={() => resetQuiz()} />
+        {isLoading ? (
+          <LoadingPage />
+        ) : (
+          <div className="flex-1 overflow-hidden">{children}</div>
+        )}
       </div>
     </div>
   );

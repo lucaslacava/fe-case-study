@@ -12,20 +12,20 @@ export function Quiz() {
 
   const totalSteps = questions.length + 1; // questions + result screen
 
-  if (showResults) {
-    return <Results onCloseQuiz={resetQuiz} />;
-  }
-
   if (error) {
     return <Error onRetry={() => window.location.reload()} />;
   }
 
   return (
     <QuizWrapper isLoading={isLoading}>
-      <>
-        <ProgressBar totalSteps={totalSteps} currentStep={currentStep} />
-        <QuizContent />
-      </>
+      {showResults ? (
+        <Results onCloseQuiz={resetQuiz} />
+      ) : (
+        <>
+          <ProgressBar totalSteps={totalSteps} currentStep={currentStep} />
+          <QuizContent />
+        </>
+      )}
     </QuizWrapper>
   );
 }

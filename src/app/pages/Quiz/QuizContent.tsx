@@ -14,7 +14,10 @@ export const QuizContent = () => {
           {currentQuestion?.question}
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+          data-testid="quiz-options"
+        >
           {currentQuestion?.options.map((option, index) => (
             <QuizItem option={option} key={index} />
           ))}
