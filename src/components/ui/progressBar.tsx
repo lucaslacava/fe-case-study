@@ -7,7 +7,10 @@ interface ProgressBarProps {
 }
 export const ProgressBar = ({ currentStep, totalSteps }: ProgressBarProps) => {
   return (
-    <div className="w-full p-4 sm:p-6 border-b flex space-x-4">
+    <div
+      className="w-full p-4 sm:p-6 border-b flex space-x-4"
+      data-testid="progress-bar"
+    >
       <ManualLogo className="size-10" />
       <div className="w-full">
         <div className="text-xs sm:text-sm text-gray-500 mb-2">
