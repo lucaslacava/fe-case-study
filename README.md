@@ -6,8 +6,7 @@ A modern, interactive quiz application built with Next.js, TypeScript, and Tailw
 
 - Interactive quiz flow with progress tracking
 - Responsive design for all screen sizes
-- Real-time feedback and results
-- Accessibility-first approach
+
 - Comprehensive end-to-end testing
 - Type-safe development with TypeScript
 
@@ -15,7 +14,7 @@ A modern, interactive quiz application built with Next.js, TypeScript, and Tailw
 
 - **Framework**: Next.js + TypeScript
 - **Styling**: Tailwind CSS + shadcn
-- **Testing**: Cypress for E2E testing
+- **Testing**: Cypress for E2E testing, Jest + RTL for unit tests
 - **State Management**: React Context API
 
 ## Project Structure
@@ -59,8 +58,11 @@ src/
 - Cypress for end-to-end testing
 - Custom commands for reusable test actions
 - Type-safe test definitions
+- RTL for unit tests
 
 ## Testing
+
+### End-to-end
 
 The application uses Cypress for end-to-end testing with a focus on:
 
@@ -80,6 +82,22 @@ cy.verifyResults(expectedResult);
 cy.closeQuiz();
 ```
 
+### Unit tests
+
+The application uses Jest and React Testing Library for comprehensive unit testing.
+
+- Tests verify both UI rendering and user interactions
+- Components are tested in isolation using mocked contexts and dependencies
+- Components are tested for:
+  - Initial rendering
+  - State changes
+  - User interactions
+  - Error states
+  - Loading states
+  - Edge cases
+
+![unit-tests-logs](/public/docs/unit-tests-logs.png)
+
 ## Getting Started
 
 1. Clone the repository
@@ -91,9 +109,13 @@ cy.closeQuiz();
    ```bash
    npm run dev
    ```
-4. Run tests:
+4. Run e2e tests:
    ```bash
    npm run cypress
+   ```
+5. Run unit tests:
+   ```bash
+   npm run test
    ```
 
 ## UI/UX Decisions
@@ -108,9 +130,11 @@ And the application has a loading time to get the answers, I decided to show thi
 
 2. **Progress Tracking**
 
-   - Visual progress bar
-   - Question counter
-   - Clear navigation
+- Visual progress bar
+- Question counter
+- Clear navigation
+
+![progress-bar](/public/docs/progress-bar.png)
 
 3. **Responsive Design**
 
