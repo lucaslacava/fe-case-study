@@ -16,7 +16,10 @@ export const ProgressBar = ({ currentStep, totalSteps }: ProgressBarProps) => {
         <div className="text-xs sm:text-sm text-gray-500 mb-2">
           Question {currentStep + 1} of {totalSteps}
         </div>
-        <Progress value={(currentStep + 1) * 25} />
+        <Progress
+          value={(currentStep + 1) * 25}
+          aria-valuenow={(currentStep + 1) * 25}
+        />
       </div>
     </div>
   );
