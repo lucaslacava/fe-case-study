@@ -52,13 +52,14 @@ export const Footer = () => {
     <footer className="bg-[#E8EFE9] text-[#0B3B3C] pt-12 px-6 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start gap-12">
         <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-          <Image
-            src="/manual-logo.svg"
-            alt="Manual logo"
-            width={75}
-            height={70}
-            className="h-auto object-contain"
-          />
+          <div className="relative w-[75px] h-[70px]">
+            <Image
+              src="/manual-logo.svg"
+              alt="Manual logo"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
 
         <div className="w-full md:flex-1 grid grid-cols-2 sm:grid-cols-4 gap-8">
