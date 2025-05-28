@@ -2,11 +2,11 @@ import React from "react";
 
 const LoadingSpinner = () => {
   return (
-    <div className="flex items-center justify-center p-4 h-screen">
+    <div className="flex items-center justify-center">
       <div className="animate-pulse">
         <svg
-          width="75"
-          height="71"
+          width="50"
+          height="48"
           viewBox="0 0 75 71"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

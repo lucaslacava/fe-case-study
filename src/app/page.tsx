@@ -8,7 +8,12 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 function Content() {
   const { showQuiz } = useQuiz();
 
-  return showQuiz ? <Quiz /> : <LandingPage />;
+  return (
+    <>
+      <LandingPage />
+      {showQuiz && <Quiz />}
+    </>
+  );
 }
 
 export default function Home() {

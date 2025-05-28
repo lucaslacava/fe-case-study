@@ -97,8 +97,10 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-12 border-t border-[#BDCDC5] py-6 text-sm text-center">
-        © {new Date().getFullYear()} Manual. All rights reserved.
+      <div className="max-w-7xl mx-auto mt-12 border-t border-[#BDCDC5] py-6 text-center">
+        <span className="font-normal text-[16px] leading-[30px] tracking-[0em] text-[#6D8A83]">
+          © {new Date().getFullYear()} Manual. All rights reserved.
+        </span>
       </div>
     </footer>
   );
