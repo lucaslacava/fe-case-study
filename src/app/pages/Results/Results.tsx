@@ -34,7 +34,7 @@ export function Results({ onCloseQuiz }: ResultsProps) {
               <p className="text-lg">
                 Great news! We have the perfect treatment for your hair loss.
                 <br />
-                Proceed to
+                Proceed to{" "}
                 <a className="underline" href="www.manual.co">
                   www.manual.co
                 </a>
