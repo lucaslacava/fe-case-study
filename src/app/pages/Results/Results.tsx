@@ -35,7 +35,12 @@ export function Results({ onCloseQuiz }: ResultsProps) {
                 Great news! We have the perfect treatment for your hair loss.
                 <br />
                 Proceed to{" "}
-                <a className="underline" href="www.manual.co">
+                <a
+                  className="underline"
+                  href="https://www.manual.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   www.manual.co
                 </a>
                 , and prepare to say hello to your new hair!
